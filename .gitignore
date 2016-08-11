@@ -1,0 +1,15 @@
+/var
+/parts
+/develop-eggs
+/bin
+/node_modules
+/.settings
+*.pyc
+*.egg
+*.egg-info
+*.pyo
+*.mo
+.project
+.mr.developer.cfg
+.installed.cfg
+.pydevproject
