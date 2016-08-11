@@ -1,0 +1,21 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"              
+           xmlns:five="http://namespaces.zope.org/five">           
+
+  <browser:page
+      for="*"
+      name="main_template"
+      class=".main_template.MainTemplate"
+      layer="xtgl.theme.interfaces.IThemeSpecific"         
+      permission="zope.Public"
+/>
+           
+  <browser:page
+      for="Products.CMFCore.interfaces.ISiteRoot"
+      name="homepage"
+      permission="zope.Public"
+      layer="xtgl.theme.interfaces.IThemeSpecific"       
+      template="templates/homepage.pt"
+/> 
+
+</configure>	        

@@ -1,0 +1,34 @@
+<configure 
+    xmlns="http://namespaces.zope.org/zope"  
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="xtgl.theme">
+  <include package="plone.app.theming" />      
+  <include package="Products.CMFCore" file="permissions.zcml" />  
+  <genericsetup:registerProfile
+      name="default"
+      title="xtgl.theme"
+      directory="profiles/default"
+      description='Diazo theme for xtgl.theme'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <!-- -*- extra stuff goes here -*- -->
+  <genericsetup:registerProfile
+      name="registerless"
+      title="xtgl  Theme - Register less resources as variables"
+      directory="profiles/registerless"
+      description='This enables the compilation with the default scripts for custom Diazo themes.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- Diazo themes -->
+  <plone:static directory="theme" name="xtgl.theme" type="theme"/>  
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="uninstall xtgl.theme"
+      directory="profiles/uninstall"
+      description="Uninstalls xtgl.theme package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+   <include package=".browser"/>
+</configure>

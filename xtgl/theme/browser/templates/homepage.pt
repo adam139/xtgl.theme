@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      metal:use-macro="here/main_template/macros/master"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"      
+      i18n:domain="collective.conference">        
+
+<body>	
+<metal:main fill-slot="homepage">
+    <tal:main-macro metal:define-macro="main">
+    	 <div id="homepage" class="container homepage">
+    	 	 <div id="portal-top"            
+            tal:condition="not:ajax_load">
+					<div class="cell width-full position-0">
+            <div tal:replace="structure provider:plone.portaltop" />
+					</div>
+       </div>
+       <div class="row">         
+         <div class="col-xs-12 col-md-4">
+         	<div tal:content="structure python: view.carouselresult()">outer</div>        	
+         </div>         
+         <div class="col-xs-12 col-md-4">
+         	<div class="portlet rolltext_portlet">
+         		<h4 class="portletHeader text-center">
+         			<a tal:attributes="href python:view.rollmore()" >
+         				<span class="label label-primary" tal:content="python:view.rollheader()" />
+         			</a>
+         		</h4>
+	<!-- ul's parent div must be set css code {display:inline;float:left;overflow:hidden;height or width;} 
+	li must be set height or width.
+	-->
+	
+	           <div id="topid"   tal:content="structure python: view.rollresult()">
+	           	
+	           </div>
+	         </div>
+         </div>
+         <div class="col-xs-12 col-md-4">
+    				<div class="portlet portletFetchOuterPortlet">
+	  				<h4  class="portletHeader text-center">
+         	<a tal:attributes="href python:view.outhtmlmore()">
+            <span class="label label-primary" tal:content="python:view.outhtmlheader()" />
+       		</a>
+    				</h4>
+    				<div id="outhtml" tal:content="structure python: view.outhtmlresult()">outer</div>	
+    				</div>
+         </div>         
+       </div>       
+     </div>
+     <div  class="container">
+ <!-- FOOTER -->
+      <footer class="col-xs-12">
+        <p class="pull-right"><a href="#">返回顶部</a></p>
+        <p>&copy; 2013 Company, 315Ok. &middot; <a href="http://www.miibeian.gov.cn/">湘ICP备07003419</a></p>
+      </footer>
+    </div>
+<div id="scripts">
+<script type="text/javascript" src="test.js" 
+    tal:attributes="src string:http://images.315ok.org/ajaxfetchimg.min.js"></script> 
+<script tal:content="python:view.outputjs()"></script>
+</div>
+    </tal:main-macro>
+</metal:main>   
+</body>
+</html>

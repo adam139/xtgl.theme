@@ -1,0 +1,11 @@
+<layers>
+    
+    <!-- Disable the Theme layer when uninstalled -->
+    
+    <layer
+        name="xtgl.theme"
+        interface="xtgl.theme.browser.interfaces.IThemeSpecific"
+        remove="True"
+        />
+
+</layers>

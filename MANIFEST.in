@@ -1,0 +1,4 @@
+recursive-include xtgl *
+include *
+global-exclude *.pyc
+prune design

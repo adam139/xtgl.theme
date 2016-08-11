@@ -1,0 +1,10 @@
+<layers>
+    
+    <!-- Enable the Diazo960 Theme layer when installed -->
+    
+    <layer
+        name="xtgl.theme"
+        interface="xtgl.theme.interfaces.IThemeSpecific"
+        />
+
+</layers>

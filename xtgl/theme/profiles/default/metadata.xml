@@ -1,0 +1,7 @@
+<?xml version="2.0"?>
+<metadata>
+  <version>2</version>
+    <dependencies>
+        <dependency>profile-plone.app.theming:default</dependency>
+    </dependencies>
+</metadata>
