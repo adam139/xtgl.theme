@@ -149,7 +149,10 @@
  			<!-- FOOTER -->
       <div class="col-xs-12 footer">
         <p class="pull-right"><a href="#">返回顶部</a></p>
-        <p>&copy; 2010-<span>2016</span>&middot;湘潭市公路管理局&middot; <a href="http://www.miibeian.gov.cn/">湘ICP备05003368</a></p>
+        <p>&copy; 2010-<tal:year 
+         tal:define="DateTime nocall:modules/DateTime.DateTime;
+                     myTime python:DateTime()"
+         tal:content="python:myTime.year()" />&middot;湘潭市公路管理局&middot; <a href="http://www.miibeian.gov.cn/">湘ICP备05003368</a></p>
       </div>
     </div>
     </footer>
